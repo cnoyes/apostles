@@ -1,15 +1,36 @@
 #!/usr/bin/env Rscript
-
-source('~/detachAllPackages.R')
-
-setwd('~/Projects/apostles/')
+# Deploy app to shinyapps.io
+# Ensure you have run run_all.R before deploying to generate derived data
 
 library('rsconnect')
 
-files <- c('app.R', 'run.R', 'raw_data/apostles.csv', 'raw_data/Table05.csv',
-           'src/1_load_apostles.R', 'src/2_fit_death_curve.R',
-           'src/3_calculate_prophet.R', 'src/4_make_plots.R',
-           'src/5_deploy_app.R', 'derived_data/')
+cat("========================================\n")
+cat("Deploying to shinyapps.io\n")
+cat("========================================\n\n")
 
-deployApp(launch.browser = F, forceUpdate = T, appFiles = files)
+# Check that derived data exists
+if (!dir.exists('derived_data')) {
+  stop("derived_data/ directory not found! Run 'Rscript run_all.R' first.")
+}
+
+required_files <- c(
+  'derived_data/apostles_with_labels.rds',
+  'derived_data/last_update.rds'
+)
+
+for (f in required_files) {
+  if (!file.exists(f)) {
+    stop("Required file not found: ", f, "\nRun 'Rscript run_all.R' first.")
+  }
+}
+
+# Deploy app with all necessary files
+deployApp(
+  launch.browser = FALSE,
+  forceUpdate = TRUE,
+  appFiles = c('app.R', 'derived_data/')
+)
+
+cat("\n✓ Deployment complete!\n")
+cat("Visit: https://claynoyes.shinyapps.io/apostles/\n")
 
