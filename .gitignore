@@ -1,0 +1,7 @@
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+packrat/
+rsconnect/
+Rplots.pdf
