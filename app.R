@@ -4,6 +4,7 @@ library(bslib)
 library(tidyverse)
 library(scales)
 library(plotly)
+library(crosstalk)
 library(glue)
 
 # --------------------------- Load data ----------------------------------------
@@ -162,8 +163,8 @@ server <- function(input, output, session) {
         dynamic = TRUE,
         persistent = TRUE,         # keep selections
         color = I("#E11D48"),
-        selected = attrs_selected(opacity = 1),
-        deselected = attrs_deselected(opacity = 0.25)
+        selected = plotly::attrs_selected(opacity = 1),
+        deselected = plotly::attrs_deselected(opacity = 0.25)
       ) %>%
       layout(hoverlabel = list(align = "left"),
              margin = list(l = 10, r = 10, t = 10, b = 10))
