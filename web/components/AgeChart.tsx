@@ -82,10 +82,10 @@ export default function AgeChart({ apostles }: AgeChartProps) {
             angle={-45}
             textAnchor="end"
             height={100}
-            tick={{ fontSize: 12 }}
+            tick={{ fontSize: 10 }}
             interval={0}
           />
-          <YAxis domain={[50, 105]} tick={{ fontSize: 12 }} />
+          <YAxis domain={[50, 105]} tick={{ fontSize: 10 }} />
           <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(0, 0, 0, 0.05)' }} />
           <Bar
             dataKey="age"
