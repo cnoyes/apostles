@@ -94,7 +94,7 @@ export default function AgeChart({ apostles }: AgeChartProps) {
             label={{
               position: 'top',
               formatter: (value: any) => Math.floor(Number(value)),
-              fontSize: 14,
+              fontSize: 10,
               fontWeight: 'bold',
               fill: '#000'
             }}

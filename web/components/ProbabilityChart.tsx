@@ -94,7 +94,7 @@ export default function ProbabilityChart({ apostles }: ProbabilityChartProps) {
             label={{
               position: 'top',
               formatter: (value: any) => `${Math.round(Number(value))}%`,
-              fontSize: 14,
+              fontSize: 10,
               fontWeight: 'bold',
               fill: '#000'
             }}
