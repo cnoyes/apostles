@@ -26,7 +26,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c('tidyverse', 'lubridate'))
+          install.packages(c('dplyr', 'tidyr', 'readr', 'lubridate', 'ggplot2', 'MASS'))
         shell: Rscript {0}
 
       - name: Run calculations with updated ages
