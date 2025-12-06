@@ -3,7 +3,7 @@
 # Uses Monte Carlo simulation (100,000 runs) to estimate the probability
 # that each apostle becomes prophet by outliving those senior to them
 
-library('tidyverse')
+library('dplyr')
 
 # Function to calculate death age based on current age and
 # fitted Weibull death curve

@@ -4,7 +4,7 @@
 
 library('MASS')
 library('ggplot2')
-library('tidyverse')
+library('dplyr')
 
 # Load CDC life table data
 data <- read.csv(file = "raw_data/Table05.csv", stringsAsFactors = F)

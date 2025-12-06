@@ -2,7 +2,8 @@
 # Create plotting functions and format labels for the Shiny app
 
 library(ggplot2)
-library(tidyverse)
+library(dplyr)
+library(scales)
 
 PlotAge <- function(apostles_with_labels) {
   

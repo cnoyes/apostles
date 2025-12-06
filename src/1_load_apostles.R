@@ -2,7 +2,9 @@
 # Load and process apostles data from CSV
 # Calculates current age based on birth date
 
-library('tidyverse')
+library('readr')
+library('tidyr')
+library('dplyr')
 
 # Load apostles data and calculate ages
 apostles <- read_csv('raw_data/apostles.csv') %>%
